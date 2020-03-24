@@ -14,5 +14,8 @@ Test of loading 100 map controls on a single page.
 
 - [control](https://gavinr.github.io/lazy-load-arcgis-js-api-experiments/100-maps/control/)
   - No lazy loading
-  - on most browsers last n maps load because only n WebGLRenderingContexts allowed
-- [intersection-observer](https://gavinr.github.io/lazy-load-arcgis-js-api-experiments/100-maps/intersection-observer/) (Lazy Loading with Intersection Observer)
+  - On most browsers last n maps load because only n WebGLRenderingContexts allowed
+- [intersection-observer](https://gavinr.github.io/lazy-load-arcgis-js-api-experiments/100-maps/intersection-observer/)
+  - Lazy Loading with Intersection Observer
+- [scroll-stop](https://gavinr.github.io/lazy-load-arcgis-js-api-experiments/100-maps/scroll-stop/)
+  - Lazy Loading by checking which maps are in view when scrolling stops
