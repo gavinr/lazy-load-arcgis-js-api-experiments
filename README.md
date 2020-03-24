@@ -1,5 +1,5 @@
 # Lazy Load ArcGIS JS API Experiments
-Experiments in lazy loading the ArcGIS API for JavaScript to get better performance.
+Experiments in lazy loading the ArcGIS API for JavaScript to get faster page loads.
 
 ## Paragraphs Test
 
