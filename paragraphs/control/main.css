@@ -1,0 +1,13 @@
+.map {
+  background-color: lightgray;
+  margin: 5px;
+  float: left;
+}
+
+.map, .map > div {
+  width: 500px;
+  height: 500px;
+}
+.intersected {
+  background-color: green;
+}
