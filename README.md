@@ -1,4 +1,4 @@
-# lazy-load-arcgis-js-api-experiments
+# Lazy Load ArcGIS JS API Experiments
 Experiments in lazy loading the ArcGIS API for JavaScript
 
 ## Paragraphs Test
