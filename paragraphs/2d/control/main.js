@@ -5,36 +5,33 @@ const createMap = async (element) => {
   element.appendChild(childElement);
   // More info on esri-loader's loadModules function:
   // https://github.com/Esri/esri-loader#loading-modules-from-the-arcgis-api-for-javascript
-  const [Map, SceneView] = await loadModules([
+  const [Map, MapView] = await loadModules([
     "esri/Map",
-    "esri/views/SceneView"
+    "esri/views/MapView"
   ], {css: true});
   
   const map = new Map({
-    basemap: "streets"
+    basemap: "streets-vector"
   });
   
   const viewOptions = {
     container: childElement,
     map: map,
-    center: [-101.17, 21.78],
-    zoom: 2
+    center: [parseFloat(element.dataset.x), parseFloat(element.dataset.y)],
+    zoom: parseInt(element.dataset.zoom)
   };
 
-  new SceneView(viewOptions);
+  new MapView(viewOptions);
 };
 
 
 
 
 window.addEventListener("load", (event) => {
-  const rootElement = document.getElementById("wrapperDiv");
-  for(let i = 0; i < 100; i++) {
-    var element = document.createElement("div");
-    element.classList.add('map');
-    rootElement.appendChild(element);
-    createMap(element);
-  }
+  
+  ['map1', 'map2', 'map3', 'map4'].forEach((id) => {
+    const rootElement = document.getElementById(id);
+    createMap(rootElement);
+  });
+  
 }, false);
-
-

@@ -5,9 +5,9 @@ const createMap = async (element) => {
   element.appendChild(childElement);
   // More info on esri-loader's loadModules function:
   // https://github.com/Esri/esri-loader#loading-modules-from-the-arcgis-api-for-javascript
-  const [Map, SceneView] = await loadModules([
+  const [Map, MapView] = await loadModules([
     "esri/Map",
-    "esri/views/SceneView"
+    "esri/views/MapView"
   ], {css: true});
   
   const map = new Map({
@@ -21,7 +21,7 @@ const createMap = async (element) => {
     zoom: 2
   };
 
-  new SceneView(viewOptions);
+  new MapView(viewOptions);
 };
 
 

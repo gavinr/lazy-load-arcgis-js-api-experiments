@@ -11,17 +11,16 @@ const createMap = async (element) => {
   ], {css: true});
   
   const map = new Map({
-    basemap: "streets-vector"
+    basemap: "streets"
   });
   
   const viewOptions = {
     container: childElement,
     map: map,
-    center: [parseFloat(element.dataset.x), parseFloat(element.dataset.y)],
-    zoom: parseInt(element.dataset.zoom)
+    center: [-101.17, 21.78],
+    zoom: 2
   };
 
-  // 3D:
   new SceneView(viewOptions);
 };
 
@@ -51,9 +50,17 @@ window.addEventListener("load", (event) => {
   });
   
   
-  ['map1', 'map2', 'map3', 'map4'].forEach((id) => {
-    const rootElement = document.getElementById(id);
-    observer.observe(rootElement);
-  });
+  
+  const rootElement = document.getElementById("wrapperDiv");
+  for(let i = 0; i < 100; i++) {
+    var element = document.createElement("div");
+    element.classList.add('map');
+    rootElement.appendChild(element);
+    // createMap(element);
+    observer.observe(element);
+  }
+
   
 }, false);
+
+
